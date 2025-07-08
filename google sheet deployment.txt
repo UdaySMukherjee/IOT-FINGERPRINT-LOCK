@@ -1,0 +1,7 @@
+function doGet(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var time = new Date();
+  var user = e.parameter.user || "Unknown";
+  sheet.appendRow([time, user]);
+  return ContentService.createTextOutput("Success");
+}
